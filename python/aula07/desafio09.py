@@ -1,5 +1,5 @@
 number = int(input('Digite o numero:'))
-print(f"{number}x1 = {number*1}")
+print(f"{number}x1 = {number*1:2}")
 print(f"{number}x2 = {number*2}")
 print(f"{number}x3 = {number*3}")
 print(f"{number}x4 = {number*4}")
