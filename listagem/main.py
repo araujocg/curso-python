@@ -1,6 +1,7 @@
 import json
 import os 
 from function.include import include
+from function.catalogue import catalogue
 # list, delete, edit #mudar pra list_items mais tarde
 
 #menus
@@ -62,7 +63,7 @@ while True:
                     if operationChoice == "1":  
                         include("1", studentPath)
                     elif operationChoice == "2":  
-                        list()
+                        catalogue(studentPath)
                     elif operationChoice == "3":  
                         delete("")
                     elif operationChoice == "4": 
@@ -75,7 +76,7 @@ while True:
                     if operationChoice == "1":  
                         include("2", professorPath)
                     elif operationChoice == "2": 
-                        list()
+                        catalogue(professorPath)
                     elif operationChoice == "3":  
                         delete("")
                     elif operationChoice == "4":  

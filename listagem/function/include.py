@@ -91,7 +91,7 @@ def include(choice, listPath):
         })
         saveData(data, listPath)
 
-# def list():
+# def catalogue():
 #     print("Listando informações...")
 
 # def delete():
