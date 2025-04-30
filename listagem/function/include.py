@@ -73,19 +73,26 @@ def include(choice, listPath):
         saveData(data, listPath)
     
     elif choice == "5":
-
         turmaData = load_json_file("json/turmas.json")
         estudanteData = load_json_file("json/estudantes.json")
 
+        code = int(input("Insira o codigo da Matrícula:"))
+        if any(item["codigo"] == code for item in data):
+            print("Código já existe! Tente novamente.")
+            return
+        
         classCode = int(input("Insira o código da turma: "))
         if any(item["codigo"] == classCode for item in turmaData):
             print("Código já existe! Tente novamente.")
             return
+        
         studentCode = int(input("Insira o código do estudante: "))
         if any(item["codigo"] == studentCode for item in estudanteData):
             print("Código já existe! Tente novamente.")
             return
+        
         data.append({
+            "codigo": code,
             "codigo_turma": classCode, 
             "codigo_estudante": studentCode
         })

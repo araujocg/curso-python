@@ -2,6 +2,7 @@ import json
 import os 
 from function.include import include
 from function.catalogue import catalogue
+from function.delete import delete
 # list, delete, edit #mudar pra list_items mais tarde
 
 #menus
@@ -26,18 +27,6 @@ professorPath = "json/professores.json"
 disciplinesPath = "json/disciplinas.json"
 classesPath = "json/turmas.json"
 enrollmentPath = "json/matriculas.json"
-
-# def readData(file):
-#     try:
-#         with open(file, 'r', encoding='utf-8') as f:
-#             list = json.load(f)
-#         return list
-#     except:
-#         return []
-# listStudent = readData(studentPath)
-# listProf = readData(professorPath)
-    
-
 
 def showMenu(menus):
     for opcao, categoria in menus.items():
@@ -65,7 +54,7 @@ while True:
                     elif operationChoice == "2":  
                         catalogue(studentPath)
                     elif operationChoice == "3":  
-                        delete("")
+                        delete(studentPath)
                     elif operationChoice == "4": 
                         edit("1")
                     elif operationChoice == "5":     
@@ -78,7 +67,7 @@ while True:
                     elif operationChoice == "2": 
                         catalogue(professorPath)
                     elif operationChoice == "3":  
-                        delete("")
+                        delete(professorPath)
                     elif operationChoice == "4":  
                         edit("1")
                     elif operationChoice == "5":     
@@ -87,11 +76,11 @@ while True:
 
                 elif menuChoice == "3":  
                     if operationChoice == "1":  
-                        include("3", enrollmentPath)
+                        include("3", disciplinesPath)
                     elif operationChoice == "2": 
-                        list()
+                        catalogue( disciplinesPath )
                     elif operationChoice == "3":  
-                        delete("")
+                        delete( disciplinesPath )
                     elif operationChoice == "4":  
                         edit("1")
                     elif operationChoice == "5":     
@@ -102,9 +91,9 @@ while True:
                     if operationChoice == "1":  
                         include("4", classesPath)
                     elif operationChoice == "2": 
-                        list()
+                        catalogue( classesPath)
                     elif operationChoice == "3":  
-                        delete("")
+                        delete( classesPath )
                     elif operationChoice == "4":  
                         edit("1")
                     elif operationChoice == "5":     
@@ -113,11 +102,11 @@ while True:
 
                 elif menuChoice == "5":  
                     if operationChoice == "1":  
-                        include()
+                        include("5", enrollmentPath )
                     elif operationChoice == "2": 
-                        list()
+                        catalogue( enrollmentPath )
                     elif operationChoice == "3":  
-                        delete("")
+                        delete( enrollmentPath )
                     elif operationChoice == "4":  
                         edit("1")
                     elif operationChoice == "5":     
