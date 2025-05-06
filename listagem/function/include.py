@@ -97,12 +97,3 @@ def include(choice, listPath):
             "codigo_estudante": studentCode
         })
         saveData(data, listPath)
-
-# def catalogue():
-#     print("Listando informações...")
-
-# def delete():
-#     print("Excluindo...")
-
-# def edit():
-#     print("Editando...")

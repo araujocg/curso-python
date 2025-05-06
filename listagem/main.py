@@ -38,6 +38,7 @@ while True:
     menuChoice = input("Informe a opção desejada:").strip()
     if menuChoice == "0":
         print("Encerrando o programa...")
+        break
     elif menuChoice in menu:
         print(f"Você escolheu a opção: {menu[menuChoice]}\nAbrindo o menu de operações")
     #Looping do menu de operações
