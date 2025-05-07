@@ -3,6 +3,7 @@ import os
 from function.include import include
 from function.catalogue import catalogue
 from function.delete import delete
+from function.edit import edit
 # list, delete, edit #mudar pra list_items mais tarde
 
 #menus
@@ -57,7 +58,7 @@ while True:
                     elif operationChoice == "3":  
                         delete(studentPath)
                     elif operationChoice == "4": 
-                        edit("1")
+                        edit("1", studentPath)
                     elif operationChoice == "5":     
                         print("Voltando para o Menu Principal...")
                         break
@@ -70,7 +71,7 @@ while True:
                     elif operationChoice == "3":  
                         delete(professorPath)
                     elif operationChoice == "4":  
-                        edit("1")
+                        edit("2", professorPath)
                     elif operationChoice == "5":     
                         print("Voltando para o Menu Principal...")
                         break
@@ -83,7 +84,7 @@ while True:
                     elif operationChoice == "3":  
                         delete( disciplinesPath )
                     elif operationChoice == "4":  
-                        edit("1")
+                        edit("")
                     elif operationChoice == "5":     
                         print("Voltando para o Menu Principal...")
                         break

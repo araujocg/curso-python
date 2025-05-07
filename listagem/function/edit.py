@@ -14,25 +14,31 @@ def saveData(dataList, filePath):
     with open(filePath, 'w', encoding='utf-8') as f:
         json.dump(dataList, f, ensure_ascii=False)
 
-def include(choice, listPath):
+def edit(choice, listPath):
     data = load_json_file(listPath)
         
     if choice == "1" or choice == "2":  
-        name = input("Insira seu nome: ")
-        code = int(input("Insira seu código: "))
-        if any(item["codigo"] == code for item in data):
-            print("Código já existe! Tente novamente.")
+        codeEdit = int(input("Insira o código do dado que você deseja editar: "))
+        foundData = None
+        for item in data:
+            if item["codigo"] == codeEdit:
+                foundData = item
+                break
+        if not foundData:
+            print("O código não existe! Tente novamente.")
             return
-        cpf = input("Insira seu CPF: ")
-        if any(item["cpf"] == cpf for item in data):
-            print("Este CPF já está cadastrado! Tente novamente.")
+
+        newName = input("Insira o novo Nome: ")
+        newCpf = input("Insira o novo CPF: ")
+        if newCpf != foundData["cpf"] and any(item["cpf"] == newCpf for item in data):
+            print("Este CPF já está cadastrado em outro registro! Tente novamente.")
             return
-        data.append({
-            "codigo": code, 
-            "nome": name, 
-            "cpf": cpf
-        })
+
+        foundData["nome"] = newName
+        foundData["cpf"] = newCpf
+
         saveData(data, listPath)
+        print("Dados atualizados com sucesso.")
 
     # elif choice == "3":
     #     name = input("Insira o nome da disciplina: ")
