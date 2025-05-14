@@ -84,7 +84,7 @@ while True:
                     elif operationChoice == "3":  
                         delete( disciplinesPath )
                     elif operationChoice == "4":  
-                        edit("")
+                        edit("3", disciplinesPath)
                     elif operationChoice == "5":     
                         print("Voltando para o Menu Principal...")
                         break
@@ -97,7 +97,7 @@ while True:
                     elif operationChoice == "3":  
                         delete( classesPath )
                     elif operationChoice == "4":  
-                        edit("1")
+                        edit("4", classesPath)
                     elif operationChoice == "5":     
                         print("Voltando para o Menu Principal...")
                         break
@@ -110,7 +110,7 @@ while True:
                     elif operationChoice == "3":  
                         delete( enrollmentPath )
                     elif operationChoice == "4":  
-                        edit("1")
+                        edit("5", enrollmentPath)
                     elif operationChoice == "5":     
                         print("Voltando para o Menu Principal...")
                         break

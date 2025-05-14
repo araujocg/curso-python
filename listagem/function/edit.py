@@ -70,28 +70,21 @@ def edit(choice, listPath):
         
         saveData(data, listPath)
     
-    # elif choice == "5":
-    #     turmaData = load_json_file("json/turmas.json")
-    #     estudanteData = load_json_file("json/estudantes.json")
+    elif choice == "5":
+        classData = load_json_file("json/turmas.json")
+        studentData = load_json_file("json/estudantes.json")
+        
+        newClassCode = int(input("Insira o novo Código da turma: "))
+        if newClassCode != foundData["codigo_turma"] and any(item["codigo_turma"] == newClassCode for item in data) and any(item["codigo"] == newClassCode for item in classData):
+            print("Código já existe! Tente novamente.")
+            return
+        
+        newStudentCode = int(input("Insira o novo Código do estudante: "))
+        if newStudentCode != foundData["codigo_turma"] and any(item["codigo_turma"] == newStudentCode for item in data) and any(item["codigo"] == newStudentCode for item in studentData):
+            print("Código já existe! Tente novamente.")
+            return
+        
+        foundData["codigo_turma"] = newClassCode
+        foundData["codigo_estudante"] = newStudentCode
 
-    #     code = int(input("Insira o codigo da Matrícula:"))
-    #     if any(item["codigo"] == code for item in data):
-    #         print("Código já existe! Tente novamente.")
-    #         return
-        
-    #     classCode = int(input("Insira o código da turma: "))
-    #     if any(item["codigo"] == classCode for item in turmaData):
-    #         print("Código já existe! Tente novamente.")
-    #         return
-        
-    #     studentCode = int(input("Insira o código do estudante: "))
-    #     if any(item["codigo"] == studentCode for item in estudanteData):
-    #         print("Código já existe! Tente novamente.")
-    #         return
-        
-    #     data.append({
-    #         "codigo": code,
-    #         "codigo_turma": classCode, 
-    #         "codigo_estudante": studentCode
-    #     })
-    #     saveData(data, listPath)
+        saveData(data, listPath)
